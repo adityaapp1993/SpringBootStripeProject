@@ -15,8 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.SpringBootStripe.model.StripeCharge;
 import com.example.SpringBootStripe.service.ChargeService;
-import com.stripe.exception.APIConnectionException;
-import com.stripe.exception.APIException;
+
+import com.stripe.exception.ApiConnectionException;
+import com.stripe.exception.ApiException;
 import com.stripe.exception.AuthenticationException;
 import com.stripe.exception.CardException;
 import com.stripe.exception.InvalidRequestException;
@@ -28,12 +29,12 @@ public class ChargeController {
 		private ChargeService chargeService;
 
 		@PostMapping(value="/v1/charges")
-		public String createCharge(@RequestBody StripeCharge charge) throws AuthenticationException, InvalidRequestException, CardException, APIConnectionException, APIException {
+		public String createCharge(@RequestBody StripeCharge charge) throws AuthenticationException, InvalidRequestException, CardException, ApiConnectionException, ApiException {
 			return chargeService.addCharge(charge);
 		}
 
 		@GetMapping(value="/v1/charges/{cid}")
-		public String retrieveCharge(@PathVariable String cid) throws AuthenticationException, InvalidRequestException, APIConnectionException, CardException, APIException {
+		public String retrieveCharge(@PathVariable String cid) throws AuthenticationException, InvalidRequestException, ApiConnectionException, CardException, ApiException {
 			return chargeService.retrieveCharge(cid);
 		}
 }

@@ -20,8 +20,8 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.stripe.exception.APIConnectionException;
-import com.stripe.exception.APIException;
+import com.stripe.exception.ApiConnectionException;
+import com.stripe.exception.ApiException;
 import com.stripe.exception.AuthenticationException;
 import com.stripe.exception.CardException;
 import com.stripe.exception.InvalidRequestException;
@@ -37,19 +37,19 @@ public class CustomerController {
 		private CustomerService customerService;
 	
 		@GetMapping(value="/v1/customers/{cid}")
-		public String retrieveCustomer(@PathVariable String cid) throws AuthenticationException, InvalidRequestException, APIException, CardException, APIConnectionException {
+		public String retrieveCustomer(@PathVariable String cid) throws AuthenticationException, InvalidRequestException, ApiException, CardException, ApiConnectionException {
 			return customerService.retrieveCustomer(cid);
 		}
 		
 
 		@PostMapping(value="/v1/customers")
-		public String addCustomer(@RequestBody StripeCustomer cus) throws AuthenticationException, InvalidRequestException, APIConnectionException, CardException, APIException, JsonProcessingException {
+		public String addCustomer(@RequestBody StripeCustomer cus) throws AuthenticationException, InvalidRequestException, ApiConnectionException, CardException, ApiException, JsonProcessingException {
 			return customerService.addCustomer(cus);
 		}
 
 		
 		@PostMapping(value="/v1/customers/{cid}/sources")
-		public String addCard(@RequestBody StripeCard card, @PathVariable String cid) throws AuthenticationException, InvalidRequestException, APIConnectionException, CardException, APIException {
+		public String addCard(@RequestBody StripeCard card, @PathVariable String cid) throws AuthenticationException, InvalidRequestException, ApiConnectionException, CardException, ApiException {
 			return customerService.addCard(card, cid);
 		}
 		
