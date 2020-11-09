@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.json.JSONObject;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -15,9 +16,11 @@ import com.stripe.exception.AuthenticationException;
 import com.stripe.exception.InvalidRequestException;
 import com.stripe.exception.StripeException;
 import com.stripe.exception.CardException;
+import com.stripe.model.Address;
 import com.stripe.model.Card;
 import com.stripe.model.Customer;
 import com.stripe.model.ExternalAccountCollection;
+import com.stripe.model.Token;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import com.stripe.exception.ApiConnectionException;
@@ -35,7 +38,7 @@ import com.example.SpringBootStripe.model.StripeCustomer;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
-
+import com.fasterxml.jackson.databind.JsonNode;
 import com.stripe.Stripe;
 
 @Service
@@ -45,14 +48,16 @@ public class CustomerService {
 		
 		Stripe.apiKey = SpringBootStripeProperties.springBootStripeData.get("stripe.api.key").toString();
 		Map<String, Object> customerParams = new HashMap<String, Object>();
-	    ObjectMapper mapper = new ObjectMapper();
 	    Customer customer = new Customer();
-	    Card c = new Card();
 	    StripeResponse response = null;
-	    
+	      
 	    try {
 	    	customerParams.put("description", cus.getDescription());
-			customer = Customer.create(customerParams);
+	    	customerParams.put("name", cus.getName());
+	    	customerParams.put("email", cus.getEmail());
+	    	customerParams.put("address", cus.getAddress());
+
+	    	customer = Customer.create(customerParams);
 		    response = customer.getLastResponse();			
 		}
 	    catch (StripeException e) {
@@ -98,7 +103,20 @@ public class CustomerService {
 			expandList.add("sources");
 			retrieveParams.put("expand", expandList);
 			Customer customer = Customer.retrieve(cid, retrieveParams, null);
-			params.put("source", "tok_mastercard");
+			
+			Map<String, Object> cardParams = new HashMap<String, Object>();
+			
+			Map<String, Object> cardDetails = sCard.getCardDetails();
+		    cardParams.put("number", cardDetails.get("number"));
+		    cardParams.put("exp_month", cardDetails.get("expiryMonth"));
+		    cardParams.put("exp_year", cardDetails.get("expiryYear"));
+		    cardParams.put("cvc", cardDetails.get("cvc"));
+		    
+		    Map<String, Object> tokenParams = new HashMap<String, Object>();
+		    tokenParams.put("card", cardParams);
+		    Token cardToken = Token.create(tokenParams);
+			
+			params.put("source", cardToken.getId());
 			card = (Card) customer.getSources().create(params);				
 			response = card.getLastResponse();
 

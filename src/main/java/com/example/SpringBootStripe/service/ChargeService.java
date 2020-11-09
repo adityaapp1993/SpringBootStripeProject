@@ -14,6 +14,7 @@ import com.stripe.exception.StripeException;
 import com.stripe.model.Charge;
 import com.stripe.model.Customer;
 import com.stripe.model.CustomerCollection;
+import com.stripe.model.ExpandableField;
 import com.stripe.net.StripeResponse;
 import com.example.SpringBootStripe.Properties.SpringBootStripeProperties;
 import com.example.SpringBootStripe.model.StripeCharge;
@@ -32,8 +33,8 @@ public String addCharge(StripeCharge charge) throws AuthenticationException, Inv
 		try {
 			chargeParams.put("amount", charge.getAmount() );
 			chargeParams.put("currency", charge.getCurrency());
-			chargeParams.put("source", "tok_amex");
 			chargeParams.put("description", charge.getDescription());
+			chargeParams.put("customer", charge.getCustomerId());
 			c = Charge.create(chargeParams);
 			response = c.getLastResponse();
 		} catch (StripeException e) {

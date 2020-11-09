@@ -13,13 +13,13 @@ public class StripeRefund {
 
 	private Long amount;
 	
-	private String charge;
+	private String chargeId;
 	
-	public String getCharge() {
-		return charge;
+	public String getChargeId() {
+		return chargeId;
 	}
-	public void setCharge(String charge) {
-		this.charge = charge;
+	public void setCharge(String chargeId) {
+		this.chargeId = chargeId;
 	}
 	public String getId() {
 		return id;

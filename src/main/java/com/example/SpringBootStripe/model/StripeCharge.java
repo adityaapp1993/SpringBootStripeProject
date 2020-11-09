@@ -34,8 +34,15 @@ public class StripeCharge {
 	private String statement_descriptor;
 	private String statement_descriptor_suffix;
 	private String status;
+	private String customerId;
 	
 	
+	public String getCustomerId() {
+		return customerId;
+	}
+	public void setCustomerId(String customerId) {
+		this.customerId = customerId;
+	}
 	public String getId() {
 		return id;
 	}

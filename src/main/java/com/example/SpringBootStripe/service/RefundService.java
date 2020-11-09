@@ -27,7 +27,7 @@ public class RefundService
 		Refund rfnd = null;
 	    StripeResponse response = null;
 		try {
-			refundParams.put("charge",refund.getCharge());
+			refundParams.put("charge",refund.getChargeId());
 			rfnd = Refund.create(refundParams);
 			response = rfnd.getLastResponse();
 		} catch (StripeException e) {

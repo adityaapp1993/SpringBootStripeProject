@@ -1,17 +1,22 @@
 package com.example.SpringBootStripe.model;
 
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.json.JSONObject;
+
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.stripe.model.Address;
 
 @Entity
-public class StripeCustomer {
+public class StripeCustomer  {
 	
 	@Id
 	private String id;
@@ -20,7 +25,31 @@ public class StripeCustomer {
 	
 	private String description;
 	
+	private String email;
 	
+	private String name;
+		
+	private HashMap<String,Object> address;
+	
+	public HashMap<String,Object> getAddress() {
+		return address;
+	}
+	public void setAddress(HashMap<String,Object> address) {
+		this.address = address;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public String getId() {
 		return id;
 	}
