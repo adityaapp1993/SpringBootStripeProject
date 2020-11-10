@@ -3,24 +3,26 @@ The spring boot application uses stripe api software which allows individuals an
 The below features are used for the application:
 1) Customer object - perform recurring charges and have multiple charges for the same customer. The api allows to create/delete/update/retrieve customer.
 
-Customer creation api - create a customer with the parameters (name, description, email, address)
-Customer retrieval api - retrieve a customer using customer id
+1.1) Customer creation api - create a customer with the parameters (name, description, email, address)
+1.2) Customer retrieval api - retrieve a customer using customer id
+
 
 2) Card object - allows to store multiple cards (Visa, mastercard, etc.) for the customer to perform charges.
 
-Card creation api - add a card to a customer with the parameters (number, expiry month, expiry year, cvv, customer id)
+2.1) Card creation api - add a card to a customer with the parameters (number, expiry month, expiry year, cvv, customer id)
+
 
 3) Charge object - to charge a card for the customer, either create or refund a charge
 
-Charge creation api - add a charge for the credit card with the parameters (amount, currency, description, and card details)
-Charge retrieval api - retrieve a charge using charge id
+3.1) Charge creation api - add a charge for the credit card with the parameters (amount, currency, description, and card details)
+3.2) Charge retrieval api - retrieve a charge using charge id
+
 
 4) Refund object - to refund a charge that was created for the customer
 
-Refund charge api - add a refund to the charge using charge id
+4.1) Refund charge api - add a refund to the charge using charge id
 
-
-![SpringBootStripe](https://user-images.githubusercontent.com/22809880/98643015-d1890480-2347-11eb-81e8-19befd9dc434.png)
+![SpringBootStripe](https://user-images.githubusercontent.com/22809880/98648037-2da35700-234f-11eb-9fdc-55e2d50d76cf.png)
 
 
 
