@@ -24,9 +24,7 @@ Charge retrieval api - retrieve a charge using charge id
 
 Refund charge api - add a refund to the charge using charge id
 
-![SpringBootStripe](https://user-images.githubusercontent.com/22809880/98648037-2da35700-234f-11eb-9fdc-55e2d50d76cf.png)
-
-
+![SpringBootStripeNew](https://user-images.githubusercontent.com/22809880/98668395-43be1100-2369-11eb-9957-4c81b52ff37e.png)
 
 
 Technology Stack:
