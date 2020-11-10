@@ -30,6 +30,8 @@ Refund charge api - add a refund to the charge using charge id
 
 
 
+The following steps are to be followed:
+
 ![SpringBootStripeNew](https://user-images.githubusercontent.com/22809880/98668395-43be1100-2369-11eb-9957-4c81b52ff37e.png)
 
 
