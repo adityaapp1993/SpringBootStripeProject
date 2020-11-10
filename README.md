@@ -24,6 +24,9 @@ Charge retrieval api - retrieve a charge using charge id
 
 Refund charge api - add a refund to the charge using charge id
 
+
+![SpringBootStripePic](https://user-images.githubusercontent.com/22809880/98669436-d1e6c700-236a-11eb-9561-d703b6818d5a.png)
+
 ![SpringBootStripeNew](https://user-images.githubusercontent.com/22809880/98668395-43be1100-2369-11eb-9957-4c81b52ff37e.png)
 
 
@@ -33,6 +36,8 @@ Technology Stack:
 
 
 Begin to setup a new spring boot project in Eclipse/STS. Include controller, service, and model for each entity.
+
+
 
 
 
