@@ -27,7 +27,7 @@ public class StripeCharge {
 	private Boolean livemode;
 	private String object;
 	private Boolean paid;
-	private String payment_method;
+	private String paymentMethodId;
 	private String receipt_number;
 	private String receipt_url;
 	private Boolean refunded;
@@ -35,6 +35,14 @@ public class StripeCharge {
 	private String statement_descriptor_suffix;
 	private String status;
 	private String customerId;
+	
+	
+	public String getPaymentMethodId() {
+		return paymentMethodId;
+	}
+	public void setPaymentMethodId(String paymentMethodId) {
+		this.paymentMethodId = paymentMethodId;
+	}
 	
 	
 	public String getCustomerId() {
