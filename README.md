@@ -7,6 +7,7 @@ The below features are used for the application:
 4) Refund object - to refund a charge that was created for the customer
 
 
+![SpringBootStripe](https://user-images.githubusercontent.com/22809880/98640573-af8d8300-2343-11eb-8587-f96207d9f495.png)
 
 Technology Stack:
 -Java
