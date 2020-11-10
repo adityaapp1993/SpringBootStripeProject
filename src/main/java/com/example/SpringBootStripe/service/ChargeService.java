@@ -35,6 +35,7 @@ public String addCharge(StripeCharge charge) throws AuthenticationException, Inv
 			chargeParams.put("currency", charge.getCurrency());
 			chargeParams.put("description", charge.getDescription());
 			chargeParams.put("customer", charge.getCustomerId());
+			chargeParams.put("source", charge.getPaymentMethodId());
 			c = Charge.create(chargeParams);
 			response = c.getLastResponse();
 		} catch (StripeException e) {
