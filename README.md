@@ -23,8 +23,8 @@ Refund charge api - add a refund to the charge using charge id
 ![SpringBootStripe](https://user-images.githubusercontent.com/22809880/98643015-d1890480-2347-11eb-81e8-19befd9dc434.png)
 
 Technology Stack:
--Java
--Stripe API
+Java
+Stripe API
 
 Begin to setup a new spring boot project in Eclipse/STS. Include controller, service, and model for each entity.
 
