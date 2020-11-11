@@ -33,6 +33,9 @@ Technology Stack:
 Begin to setup a new spring boot project in Eclipse/STS. Include controller, service, and model for each entity.
 
 
+The following apis are to be developed:
+
+Customer creation api - create a customer having name, email, address.
 
 ![SpringBootStripePic](https://user-images.githubusercontent.com/22809880/98779613-97823600-240d-11eb-8744-32d10a0a75c6.png)
 
