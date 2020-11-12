@@ -37,6 +37,4 @@ The following apis are to be developed:
 
 Customer creation api - create a customer having name, email, address, description.
 
-![SpringBootStripePic](https://user-images.githubusercontent.com/22809880/98779613-97823600-240d-11eb-8744-32d10a0a75c6.png)
-
-
+![Screenshot from 2020-11-12 20-41-40](https://user-images.githubusercontent.com/22809880/98974659-058c3300-24ca-11eb-8f63-170e1a4a7675.png)
