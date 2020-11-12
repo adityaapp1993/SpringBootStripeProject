@@ -38,3 +38,15 @@ The following apis are to be developed:
 Customer creation api - create a customer having name, email, address, description.
 
 ![Screenshot from 2020-11-12 20-41-40](https://user-images.githubusercontent.com/22809880/98974659-058c3300-24ca-11eb-8f63-170e1a4a7675.png)
+
+
+
+Customer retrieval api - to retrieve customer details using customer id
+
+![Screenshot from 2020-11-12 20-42-18](https://user-images.githubusercontent.com/22809880/98974981-60258f00-24ca-11eb-83a9-a54a01a9d474.png)
+
+
+
+Card Creation api - add a card for specific customer
+
+![Screenshot from 2020-11-12 20-42-42](https://user-images.githubusercontent.com/22809880/98975087-88ad8900-24ca-11eb-8e9e-9ef777a6bd15.png)
