@@ -50,3 +50,20 @@ The following apis are to be developed:
 3) Card Creation api - add a card for specific customer
 
 ![Screenshot from 2020-11-12 20-42-42](https://user-images.githubusercontent.com/22809880/98975087-88ad8900-24ca-11eb-8e9e-9ef777a6bd15.png)
+
+
+4) Create charge api - add a charge for the customer for credit or debit card
+
+![Screenshot from 2020-11-12 20-43-21](https://user-images.githubusercontent.com/22809880/98975604-27d28080-24cb-11eb-83a4-6b295810bd13.png)
+
+
+5) Retrieve charge api - to retrieve a charge using charge id
+
+![Screenshot from 2020-11-12 20-43-45](https://user-images.githubusercontent.com/22809880/98975725-4fc1e400-24cb-11eb-90e2-3704a0384632.png)
+
+
+6) Refund charge api - to refund the charge created
+
+![Screenshot from 2020-11-12 20-43-57](https://user-images.githubusercontent.com/22809880/98975881-8a2b8100-24cb-11eb-8361-5554c5f909d3.png)
+
+
